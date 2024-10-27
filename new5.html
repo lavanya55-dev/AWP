@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<script>
+	
+  function validateForm() {
+  var fullName = document.getElementById("Full_Name").value.trim();
+  var phoneNumber = document.getElementById("Phone_Number").value.trim();
+  var email = document.getElementById("Email_Address").value.trim();
+  var preferredDate = document.getElementById("Preferred_Date").value;
+
+  // Check if all fields are filled
+  if (fullName === "" || phoneNumber === "" || email === "" || preferredDate === "") {
+    alert("Please fill all the fields!!");
+    return false;
+  }
+
+  // Validate Full Name (only alphabets, spaces, first letter capital)
+  var nameRE = /^[A-Z][a-zA-Z\s]*$/;
+  if (!nameRE.test(fullName)) {
+    alert("Full name should only contain alphabets, spaces, and start with a capital letter!");
+    return false;
+  }
+
+  // Validate Phone Number (10 digits)
+  var phoneRE = /^\d{10}$/;
+  if (!phoneRE.test(phoneNumber)) {
+    alert("Phone number must be exactly 10 digits!");
+    return false;
+  }
+
+  // Validate Email (valid Gmail format)
+  var emailRE = /^[a-zA-Z0-9._]+@gmail\.com$/;
+  if (!emailRE.test(email)) {
+    alert("Email is not in correct format! Only Gmail addresses are allowed.");
+    return false;
+  }
+
+  // Validate Preferred Date (not in the past)
+  var today = new Date().toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
+  if (preferredDate < today) {
+    alert("Preferred date cannot be in the past!");
+    return false;
+  }
+
+  // Reset the form after successful validation
+  document.getElementById("myForm").reset();
+  alert("Appointment booked successfully!");
+  return true;
+}
+
+
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sanjeevani Hospital |HealthCare</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo"><h1>San<span>jeevani</h1> Hospital</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="new5.html">Home</a></li>
+          <li class="link"><a href="aboutus.html">About Us</a></li>
+          <li class="link"><a href="#">More About Doctors</a>
+			<ul class="dropdown">
+			<li><a href="docprofile.html">Doctor Profile</a></li>
+			
+			</ul>
+			</li>
+			
+          
+        </ul>
+        <button class="btn"><a href="http://localhost:4000/login.html" style="color:white">Login</a></button>
+		<button class="btn"><a href="http://localhost:4000/registration.html" style="color:white">Sign in </a></button>
+ 
+     
+    
+      </nav>
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>We Provide Medical Services That You Can Trust</h1>
+		  
+ 
+ 	  
+
+        </div>
+        <div class="header__form">
+          <form id="myForm" onsubmit="return validateForm();">
+              <h4>Book Now</h4>
+              
+              <label for="Full_Name">Full Name:</label>
+              <input type="text" id="Full_Name" name="full_name" required>
+              
+              <label for="Phone_Number">Phone Number:</label>
+              <input type="text" id="Phone_Number" name="phone_number" required>
+              
+              <label for="Email_Address">Email Address:</label>
+              <input type="email" id="Email_Address" name="email_address" required>
+              
+              <label for="Preferred_Date">Preferred Date:</label>
+              <input type="date" id="Preferred_Date" name="preferred_date" required>
+            
+              <button type="submit" class="btn form__btn">Book Appointment</button>
+          </form>
+          
+          <script>
+              function validateForm() {
+                  var fullName = document.getElementById("Full_Name").value.trim();
+                  var phoneNumber = document.getElementById("Phone_Number").value.trim();
+                  var email = document.getElementById("Email_Address").value.trim();
+                  var preferredDate = document.getElementById("Preferred_Date").value;
+      
+                  // Check if all fields are filled
+                  if (fullName === "" || phoneNumber === "" || email === "" || preferredDate === "") {
+                      alert("Please fill all the fields!!");
+                      return false;
+                  }
+      
+                  // Validate Full Name (only alphabets, spaces, first letter capital)
+                  var nameRE = /^[A-Z][a-zA-Z\s]*$/;
+                  if (!nameRE.test(fullName)) {
+                      alert("Full name should only contain alphabets, spaces, and start with a capital letter!");
+                      return false;
+                  }
+      
+                  // Validate Phone Number (10 digits)
+                  var phoneRE = /^\d{10}$/;
+                  if (!phoneRE.test(phoneNumber)) {
+                      alert("Phone number must be exactly 10 digits!");
+                      return false;
+                  }
+      
+                  // Validate Email (valid Gmail format)
+                  var emailRE = /^[a-zA-Z0-9._]+@gmail\.com$/;
+                  if (!emailRE.test(email)) {
+                      alert("Email is not in correct format! Only Gmail addresses are allowed.");
+                      return false;
+                  }
+      
+                  // Validate Preferred Date (not in the past)
+                  var today = new Date().toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
+                  if (preferredDate < today) {
+                      alert("Preferred date cannot be in the past!");
+                      return false;
+                  }
+      
+                  alert("Booked Appointment");
+                  return true; // All validations passed
+              }
+          </script>
+      </div>
+      
+      
+      </div>
+    </header>
+
+    <section class="section__container service__container">
+      <div class="service__header">
+        <div class="service__header__content">
+          <h2 class="section__header">Our services</h2>
+          <p>
+            Making healthcare better together
+          </p>
+        </div>
+        
+      </div>
+      <div class="service__grid">
+        <div class="service__card">
+          <span><i class="ri-microscope-line"></i></span>
+          <h4>Laboratory Test</h4>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-mental-health-line"></i></span>
+          <h4>Health Check</h4>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-hospital-line"></i></span>
+          <h4>General Dentistry</h4>
+          
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <section class="section__container about__container">
+      <div class="about__content">
+        <h2 class="section__header" style="color:white">About Us</h2>
+        <p style="color:white">
+         Welcome to our healthcare platform, your all-in-one source for trustworthy 
+		 and thorough healthcare information. Our dedication is to foster well-being 
+		 and offer valuable tools to empower you throughout your health journey.
+        </p>
+        <p style="color:white">
+          Delve into our expansive array of well-crafted articles and guides that span
+		  a diverse spectrum of health subjects. Whether you're seeking insights into 
+		  common medical conditions or looking for tips on maintaining a healthy lifestyle, 
+		  our content is tailored to inform, motivate, and assist you in making well-informed 
+		  decisions about your health.
+        </p>
+        <p style="color:white">
+          Uncover practical health tips and lifestyle guidance to enhance both your physical 
+		  and mental well-being. We firmly believe that incremental changes can result in 
+		  substantial improvements in your overall quality of life, and we're here to assist
+		  you on your quest toward a healthier and more contented you.
+        </p>
+      </div>
+      <div class="about__image">
+        <img src="https://www.truelifehospital.com/assets/img/new-images/about-us.jpg" alt="about" />
+      </div>
+    </section>
+
+    <section class="section__container why__container">
+      <div class="why__image">
+        <img src="https://obesityout.com.mx/wp2023/wp-content/uploads/2023/06/Why_Choose_Us_Obesity_Out.jpg" 
+		alt="why choose us" />
+      </div>
+      <div class="why__content">
+        <h2 class="section__header">Why Choose Us</h2>
+        <div class="why__grid">
+          <span><i class="ri-hand-heart-line"></i></span>
+          <div>
+            <h4>Intensive Care</h4>
+            <p>
+              Our Intensive Care Unit is equipped with advanced technology and
+              staffed by team of professionals
+            </p>
+          </div>
+          <span><i class="ri-truck-line"></i></span>
+          <div>
+            <h4>Free Ambulance Car</h4>
+            <p>
+              A compassionate initiative to prioritize your health and
+              well-being without any financial burden.
+            </p>
+          </div>
+          <span><i class="ri-hospital-line"></i></span>
+          <div>
+            <h4>Medical and Surgical</h4>
+            <p>
+              Our Medical and Surgical services offer advanced healthcare
+              solutions to address medical needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container doctors__container">
+      <div class="doctors__header">
+        <div class="doctors__header__content">
+          <h2 class="section__header">Our Special Doctors</h2>
+          <p>
+            We take pride in our exceptional team of doctors, each a specialist
+            in their respective fields.
+          </p>
+        </div>
+        <div class="doctors__nav">
+          <span><i class="ri-arrow-left-line"></i></span>
+          <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div class="doctors__grid">
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="https://img.freepik.
+			com/free-photo/handsome-young-male-doctor-with-stethoscope-standing-against-blue-background_662251-343
+			.jpg" alt="doctor" />
+           
+          </div>
+          <h4>Dr. Sandeep Sharma</h4>
+          <p>Cardiologist</p>
+        </div>
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/028/287/555/small/an-
+			indian-young-female-doctor-isolated-on-
+			green-ai-generated-photo.jpg" alt="doctor" />
+           
+          </div>
+          <h4>Dr. Pia Agarwal</h4>
+          <p>Neurosurgeon</p>
+        </div>
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="https://t3.ftcdn.net/jpg/02/59/73/92/360_F_259739252_3hoR3B8ZbSvPuVd46g3ZJSiVwqEytTTn.jpg" alt="doctor" />
+           
+          </div>
+          <h4>Dr. Suyash Mishra</h4>
+          <p>Dermatologist</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3 >San<span><span style="color:orange">jeevani</span><p ><h3 >hospital</h3></p></span></h3>
+          <p>
+            We are honored to be a part of your healthcare journey and committed
+            to delivering compassionate, personalized, and top-notch care every
+            step of the way.
+          </p>
+          
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Home</p>
+          <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+         
+          <p>Privacy Policy</p>
+          
+          <p>Our Stores</p>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> 123, Irla, Vile Parle,Mumbai ,India
+          </p>
+          <p><i class="ri-mail-fill"></i> support1234@care.com</p>
+          <p><i class="ri-phone-fill"></i> 3456 789</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <p>Copyright © Sanjeevani. All rights reserved.</p>
+          
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

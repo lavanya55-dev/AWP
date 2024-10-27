@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthcare Platform</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a6e4d0, #12ac8e); /* Gradient background */
+            color: #333;
+        }
+        :root {
+  --primary-color: #12ac8e;
+  --primary-color-dark: #0d846c;
+  --primary-color-light: #e9f7f7;
+  --secondary-color: orange;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+.btn {
+  padding:  0.5rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            transform: translateY(-100%); /* Initial slide up effect */
+            animation: slideIn 0.5s forwards; /* Animation for sliding content */
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #12ac8e; /* Primary color */
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+        }
+
+        .content img:hover {
+            transform: scale(1.05); /* Increase size on hover */
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+       <a  href="new5.html"><button class="btn" name="btn">Home</button></a> 
+        <div class="header">
+            
+            <h1>About Us</h1>
+            <img src="https://www.piramalrevanta.com/wp-content/uploads/2022/09/20220906-article-banner-01.jpg" alt="Hospital Image">
+        </div>
+        <div class="content">
+            <p>Welcome to our healthcare platform, your all-in-one source for trustworthy and thorough healthcare information. Our dedication is to foster well-being and offer valuable tools to empower you throughout your health journey.</p>
+
+            <p>Delve into our expansive array of well-crafted articles and guides that span a diverse spectrum of health subjects. Whether you're seeking insights into common medical conditions or looking for tips on maintaining a healthy lifestyle, our content is tailored to inform, motivate, and assist you in making well-informed decisions about your health.</p>
+
+            <p>Uncover practical health tips and lifestyle guidance to enhance both your physical and mental well-being. We firmly believe that incremental changes can result in substantial improvements in your overall quality of life, and we're here to assist you on your quest toward a healthier and more contented you.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
